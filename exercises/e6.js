@@ -5,7 +5,9 @@ import { data } from "../data/data";
 // Return example: ['name1', 'name2', ... , 'nameN']
 
 export function getAsteroidsDiscoveredAfterYear(data, year) {
-  // Your code goes here...
+let spaceRocks = data.asteroids.filter(rock => rock.discoveryYear > year);
+let result = spaceRocks.map(rock => rock.name);
+return result;
 }
 
 

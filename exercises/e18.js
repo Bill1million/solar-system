@@ -1,13 +1,32 @@
 /**
  * SPACE DATA EXERCISE 18
- * Return the year with the greatest number of Asteroids discoveries
+ * Return the year with the greatest number of asteroid discoveries
  * Return example: 1902
  */
 
 export function getGreatestDiscoveryYear(data) {
-  // Your code goes here...
-  // feel free to import your `maxBy` or `minBy` methods from previous lessons
+
+  const yearMap = new Map();
+  let maxYear = null;
+  let maxCount = 0;
+
+  for (const asteroid of data.asteroids) {
+    const year = asteroid.discoveryYear;
+    
+    const count = (yearMap.get(year) || 0) + 1;
+
+    yearMap.set(year, count);
+
+    if (count > maxCount) {
+      maxCount = count;
+      maxYear = year;
+    }
+  }
+
+  return maxYear;
 }
+
+
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-18"
