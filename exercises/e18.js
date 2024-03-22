@@ -5,28 +5,21 @@
  */
 
 export function getGreatestDiscoveryYear(data) {
-
   const yearMap = new Map();
   let maxYear = null;
   let maxCount = 0;
 
   for (const asteroid of data.asteroids) {
     const year = asteroid.discoveryYear;
-    
     const count = (yearMap.get(year) || 0) + 1;
-
     yearMap.set(year, count);
-
     if (count > maxCount) {
       maxCount = count;
       maxYear = year;
     }
   }
-
   return maxYear;
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-18"

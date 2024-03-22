@@ -12,9 +12,7 @@ export function find(food, healthy) {
   for (let i = 0; i < food.length; i++) {
     let fruits = food[i];
 
-    let result = healthy(fruits);
-
-    if (result) {
+  if  (healthy(fruits))  {
       return fruits;
     }
   }

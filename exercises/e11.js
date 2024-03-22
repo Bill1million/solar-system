@@ -8,8 +8,7 @@ import { data } from "../data/data";
 export function lowMoonsPlanets(data) {
 
   let hasMoonsLessThenTen = data.planets.filter(p => !p.moons || p.moonsCount < 10)
-  let results = hasMoonsLessThenTen.map(p => p.name);
-  return results;
+   return hasMoonsLessThenTen.map(p => p.name);
 }
 
 // === TEST YOURSELF ===
